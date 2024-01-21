@@ -16,16 +16,16 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-const contactsInitialState = { 
+const carsInitialState = { 
   items: [],
   loading: false,
   error: null,
   showModal: false,
 };
 
-const contactsSlice = createSlice({
-  name: "contacts",
-  initialState: contactsInitialState,
+const carsSlice = createSlice({
+  name: "cars",
+  initialState: carsInitialState,
   reducers: {
     // select/unselect contact
     toggleCompleted(state, action) {
@@ -96,6 +96,6 @@ const contactsSlice = createSlice({
       .addDefaultCase((state, action) => {})
 });
 
-export const contactsReducer = contactsSlice.reducer;
-export const { toggleCompleted, } = contactsSlice.actions;
+export const carsReducer = carsSlice.reducer;
+export const { toggleCompleted, } = carsSlice.actions;
 

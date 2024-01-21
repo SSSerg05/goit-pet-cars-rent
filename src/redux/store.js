@@ -13,13 +13,13 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import { carsReducer } from "./contacts/contactsSlice";
+import { carsReducer } from "./cars/carsSlice";
 import { filtersReducer } from "./filters/filtersSlice";
 import { findQueryReducer } from "./filters/findQuerySlice";
 import { themeReducer } from "./theme/themeSlice";
 
 
-const contactsConfig = {
+const carsConfig = {
   key: 'cars',
   storage,
   whitelist: ['items'],
@@ -40,7 +40,7 @@ const themeConfig = {
 // redux-persist + store
 export const store = configureStore({
   reducer: {
-    cars: persistReducer(contactsConfig, contactsReducer),
+    cars: persistReducer(carsConfig, carsReducer),
     filters: persistReducer(filtersConfig, filtersReducer),
     findQuery: findQueryReducer,
     theme: persistReducer(themeConfig, themeReducer),
